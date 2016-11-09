@@ -312,7 +312,10 @@ namespace Aga.Controls.Tree
 			_children = new NodeCollection(this);
 			_nodes = new ReadOnlyCollection<TreeNode>(_children);
 			_tag = tag;
-		}
+
+            if (tag != null)
+                HasChildren = (this.Tree.Model).HasChildren(tag);
+        }
 
 		public override string ToString()
 		{
