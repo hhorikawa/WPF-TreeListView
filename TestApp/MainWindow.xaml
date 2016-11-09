@@ -10,6 +10,9 @@
 		</TabItem>
 		<TabItem Header="Registry">
 			<local:RegistrySample/>
-		</TabItem>
-	</TabControl>
+        </TabItem>
+        <TabItem Header="TestCollectionChanged">
+            <local:TestCollectionChanged />
+        </TabItem>
+    </TabControl>
 </Window>
