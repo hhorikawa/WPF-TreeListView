@@ -114,12 +114,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aga.Controls\Aga.Controls.csproj">
-      <Project>{D17CD489-1B14-47EB-8C22-C189D078AEC9}</Project>
-      <Name>Aga.Controls</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\data.png" />
     <Resource Include="Images\folder.png" />
   </ItemGroup>
@@ -128,6 +122,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aga.Controls\Aga.Controls.csproj">
+      <Project>{bc052dff-fc32-4690-8dd2-99074b97b7fa}</Project>
+      <Name>Aga.Controls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

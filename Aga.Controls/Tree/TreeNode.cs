@@ -8,9 +8,10 @@ using System.Collections.Specialized;
 
 namespace Aga.Controls.Tree
 {
-	public sealed class TreeNode : INotifyPropertyChanged
-	{
-		#region NodeCollection
+
+public sealed class TreeNode : INotifyPropertyChanged
+{ 
+	#region NodeCollection
 		private class NodeCollection : Collection<TreeNode>
 		{
 			private TreeNode _owner;
