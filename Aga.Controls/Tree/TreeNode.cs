@@ -1,3 +1,4 @@
+﻿// -*- coding:utf-8-with-signature -*-
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,14 +11,15 @@ namespace Aga.Controls.Tree
 {
 
 public sealed class TreeNode : INotifyPropertyChanged
-{ 
-	#region NodeCollection
-		private class NodeCollection : Collection<TreeNode>
-		{
+{
+    #region NodeCollection
+    private class NodeCollection : Collection<TreeNode>
+    {
 			private TreeNode _owner;
 
-			public NodeCollection(TreeNode owner)
-			{
+        // コンストラクタ                
+        public NodeCollection(TreeNode owner)
+        {
 				_owner = owner;
 			}
 
@@ -304,19 +306,30 @@ public sealed class TreeNode : INotifyPropertyChanged
 
 		#endregion
 
-		internal TreeNode(TreeList tree, object tag)
-		{
-			if (tree == null)
-				throw new ArgumentNullException("tree");
 
-			_tree = tree;
+    // コンストラクタ
+    // これを直接呼び出すのではなく, `TreeList()` を使え.
+    // @param tree  ナル値不可
+    internal TreeNode(TreeList tree, object tag)
+    {
+        if (tree == null)
+            throw new ArgumentNullException("tree");
+
+        _tree = tree;
 			_children = new NodeCollection(this);
 			_nodes = new ReadOnlyCollection<TreeNode>(_children);
 			_tag = tag;
-		}
 
-		public override string ToString()
-		{
+        if (tag != null) { 
+            var m = Tree.Model;
+            if (m != null)  
+                this.HasChildren = m.HasChildren(tag);
+        }
+    }
+
+    
+    public override string ToString()
+    {
 			if (Tag != null)
 				return Tag.ToString();
 			else

@@ -7,9 +7,10 @@ using Aga.Controls.Tree;
 
 namespace UnitTests
 {
-	[TestClass]
-	public class NodeTest
-	{
+    
+[TestClass]
+public class NodeTest
+{
 
 		[TestMethod]
 		public void VisibleChildren()
@@ -25,11 +26,11 @@ namespace UnitTests
 			Assert.AreEqual(3, b.VisibleChildrenCount);
 		}
 
-		private static TreeNode CreateTreeNode(int depth, int count)
-		{
-			TreeNode root = new TreeNode(null, null);
-			if (depth > 0)
-			{
+    private static TreeNode CreateTreeNode(int depth, int count)
+    {
+        TreeNode root = new TreeNode(new TreeList(), null);
+
+        if (depth > 0) {
 				for (int i = 0; i < count; i++)
 				{
 					root.Children.Add(CreateTreeNode(depth - 1, count));

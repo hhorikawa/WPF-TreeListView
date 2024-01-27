@@ -72,6 +72,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Tabs\TestCollectionChanged.xaml.cs">
+      <DependentUpon>TestCollectionChanged.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TestCollectionChangedModel.cs" />
     <Page Include="Tabs\MainDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +83,10 @@
     <Page Include="Tabs\RegistrySample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\TestCollectionChanged.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="TreeStyles.xaml">
       <SubType>Designer</SubType>
