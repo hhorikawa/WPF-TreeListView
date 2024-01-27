@@ -14,8 +14,9 @@ using System.Windows.Controls.Primitives;
 
 namespace Aga.Controls.Tree
 {
-	public class TreeList: ListView
-	{
+
+public class TreeList: ListView
+{
 		#region Properties
 
 		/// <summary>
@@ -28,9 +29,8 @@ namespace Aga.Controls.Tree
 		} 
 
 
-		private ITreeModel _model;
-		public ITreeModel Model
-		{
+    private ITreeModel _model;
+    public ITreeModel Model {
 		  get { return _model; }
 		  set 
 		  {
@@ -81,14 +81,15 @@ namespace Aga.Controls.Tree
 		}
 		#endregion
 
-		public TreeList()
-		{
-			Rows = new ObservableCollectionAdv<TreeNode>();
+    // コンストラクタ
+    public TreeList()
+    {
+        Rows = new ObservableCollectionAdv<TreeNode>();
 			_root = new TreeNode(this, null);
 			_root.IsExpanded = true;
 			ItemsSource = Rows;
 			ItemContainerGenerator.StatusChanged += ItemContainerGeneratorStatusChanged;
-		}
+    }
 
 		void ItemContainerGeneratorStatusChanged(object sender, EventArgs e)
 		{

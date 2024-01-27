@@ -4,12 +4,15 @@
     xmlns:local="clr-namespace:TestApp"
     Title="Main Window" Height="480" Width="640">
 
-	<TabControl>
-		<TabItem Header="Main Demo">
+  <TabControl>
+    <TabItem Header="Main Demo">
 			<local:MainDemo/>
-		</TabItem>
-		<TabItem Header="Registry">
+    </TabItem>
+    <TabItem Header="Registry">
 			<local:RegistrySample/>
-		</TabItem>
-	</TabControl>
+    </TabItem>
+    <TabItem Header="TestCollectionChanged">
+            <local:TestCollectionChanged />
+    </TabItem>
+  </TabControl>
 </Window>
