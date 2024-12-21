@@ -292,9 +292,8 @@ public sealed class TreeNode : INotifyPropertyChanged
 			get { return _tag; }
 		}
 
-		private Collection<TreeNode> _children;
-		internal Collection<TreeNode> Children
-		{
+    Collection<TreeNode> _children;
+    public Collection<TreeNode> Children {
 			get { return _children; }
 		}
 
@@ -310,7 +309,7 @@ public sealed class TreeNode : INotifyPropertyChanged
     // コンストラクタ
     // これを直接呼び出すのではなく, `TreeList()` を使え.
     // @param tree  ナル値不可
-    internal TreeNode(TreeList tree, object tag)
+    public TreeNode(TreeList tree, object tag)
     {
         if (tree == null)
             throw new ArgumentNullException("tree");

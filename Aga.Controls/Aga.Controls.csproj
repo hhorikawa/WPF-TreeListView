@@ -13,10 +13,13 @@
     <PackageTags>WPF;TreeView</PackageTags>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Aga.Controls.csproj~" />
+    <None Remove="AssemblyInfo.cs~" />
     <None Remove="WpfCustomControlLibrary1.csproj~" />
   </ItemGroup>
 

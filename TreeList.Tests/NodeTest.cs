@@ -1,20 +1,15 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 using Aga.Controls.Tree;
+using Xunit;
 
 namespace UnitTests
 {
     
-[TestClass]
 public class NodeTest
 {
-
-		[TestMethod]
-		public void VisibleChildren()
-		{
+    [WpfFact]
+    public void VisibleChildren()
+	{
 			TreeNode root = CreateTreeNode(3, 3);
 			root.IsExpanded = true;
 			var a = root.Children[0];
@@ -22,13 +17,14 @@ public class NodeTest
 			var b = root.Children[0].Children[2];
 			b.IsExpanded = true;
 
-			Assert.AreEqual(6, a.VisibleChildrenCount);
-			Assert.AreEqual(3, b.VisibleChildrenCount);
-		}
+		Assert.Equal(6, a.VisibleChildrenCount);
+		Assert.Equal(3, b.VisibleChildrenCount);
+	}
 
-    private static TreeNode CreateTreeNode(int depth, int count)
+    
+	private static TreeNode CreateTreeNode(int depth, int count)
     {
-        TreeNode root = new TreeNode(new TreeList(), null);
+        TreeNode root = new TreeNode(new Aga.Controls.Tree.TreeList(), null);
 
         if (depth > 0) {
 				for (int i = 0; i < count; i++)

@@ -1,33 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Aga.Controls.Tree;
+
 
 namespace TestApp
 {
 	/// <summary>
 	/// Interaction logic for MainDemo.xaml
 	/// </summary>
-	public partial class MainDemo : UserControl
-	{
-		public MainDemo()
-		{
+public partial class MainDemo : UserControl
+{
+    public MainDemo()
+    {
 			InitializeComponent();
 
 			LoadModel(3,5,5);
-		}
+	}
 
-		private void LoadModel(int c1, int c2, int c3)
+    void LoadModel(int c1, int c2, int c3)
 		{
 			var model = PersonModel.CreateTestModel(c1, c2, c3);
 			_treeList.Model = model;

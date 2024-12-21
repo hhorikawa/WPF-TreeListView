@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using Aga.Controls.Tree;
 
 namespace TestApp
 {
-	public class PersonModel : ITreeModel
-	{
-		public static PersonModel CreateTestModel(int count1, int count2, int count3)
-		{
+
+// `ITreeModel` から派生しなければならない.
+public class PersonModel : ITreeModel
+{
+    public static PersonModel CreateTestModel(int count1, int count2, int count3)
+    {
 			var model = new PersonModel();
 			for (int i = 0; i < count1; i++)
 			{
@@ -33,15 +32,17 @@ namespace TestApp
 			Root = new Person();
 		}
 
-		public System.Collections.IEnumerable GetChildren(object parent)
-		{
+    // @implements
+    public System.Collections.IEnumerable GetChildren(object parent)
+    {
 			if (parent == null)
 				parent = Root;
 			return (parent as Person).Children;
 		}
 
-		public bool HasChildren(object parent)
-		{
+    // @implements
+    public bool HasChildren(object parent)
+    {
 			return (parent as Person).Children.Count > 0;
 		}
 	}
